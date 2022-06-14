@@ -1,0 +1,79 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(54, 54, 54); 
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 200px auto;
+    text-align: center;
+}
+
+.container div {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.container div::before {
+    position: absolute;
+    content: "";
+    width: 1%;
+    height: 100%;
+    animation-name: reverse;
+    animation-duration: 0.6s;
+    animation-delay: 0.3s;
+    z-index: -1;
+}
+
+.container div::after {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    content: "";
+    width: 0;
+    height: 20%;
+    animation-name: reverse;
+    animation-duration: 0.3s;
+}
+
+
+.container div:hover::before {
+    animation: line 0.3s alternate;
+    z-index: -1;
+}
+
+.container div:hover::after {
+    animation: line 0.6s alternate forwards 0.3s;
+}
+
+
+@keyframes line {
+    from {
+        width: 1%;
+        background: red;
+    }
+    to{
+        width: 100%;
+        background: red;
+    }
+}
+
+@keyframes reverse {
+    0% {
+        width: 100%;
+        background: red;
+    }
+    100%{
+        width: 1%;
+        background: red;
+    }
+}
