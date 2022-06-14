@@ -59,21 +59,21 @@ body {
 @keyframes line {
     from {
         width: 1%;
-        background: red;
+        background: crimson;
     }
     to{
         width: 100%;
-        background: red;
+        background: crimson;
     }
 }
 
 @keyframes reverse {
     0% {
         width: 100%;
-        background: red;
+        background: crimson;
     }
     100%{
         width: 1%;
-        background: red;
+        background: crimson;
     }
 }
